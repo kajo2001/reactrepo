@@ -2,7 +2,6 @@ pipeline{
     agent any
     tools {
         nodejs "NodeJs"
-    
     }
 
     stages {
@@ -25,15 +24,17 @@ pipeline{
             }
         }
 
-        stage ("Build") {
+        stage("Build") {
             steps {
                 bat "npm run build"
             }
         }
 
-        stage ("Deployment") {
-            bat "del /q /s C:\\inetpub\\wwwroot\\React\\*"
-            bat "xcopy /E /I /Y build\\* C\\inetpub\\wwwroot\\React\\"    
+        stage("Deployment") {
+            steps{
+            bat "del /q /s C:\\inetpub\\wwwroot\\reactapp\\*"
+            bat "xcopy /E /I /Y build\\* C\\inetpub\\wwwroot\\reactapp\\"    
                }
+    }
     }
 }
