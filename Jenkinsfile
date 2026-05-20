@@ -32,8 +32,8 @@ pipeline{
         }
 
         stage ("Deployment") {
-            bat "del /q /s C:\\inetpub\\wwwroot\\react\\*"
-            bat "xcopy /E /I /Y build\\* C\\inetpub\\wwwroot\\react"    
+            bat "del /q /s C:\\inetpub\\wwwroot\\React\\*"
+            bat "xcopy /E /I /Y build\\* C\\inetpub\\wwwroot\\React\\"    
                }
     }
 }
